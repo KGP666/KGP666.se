@@ -128,11 +128,11 @@ input[type="range"]::-webkit-slider-thumb {
   }
 }
 
+*/
+/* End of first animation*/
 * {
   box-sizing: border-box;
 }
-*/
-/* End of first animation*/
 
 body {
   min-height: 100vh;
