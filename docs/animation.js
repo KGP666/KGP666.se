@@ -1,11 +1,15 @@
+console.log("JS loaded");
+
 const slider = document.querySelector('input[type="range"]');
 const root = document.querySelector("article");
+console.log("const started");
 
 const span = (text, index) => {
   const node = document.createElement("span");
 
   node.textContent = text;
   node.style.setProperty("--index", index);
+  console.log("return node");
 
   return node;
 };
@@ -18,7 +22,10 @@ const { matches: motionOK } = window.matchMedia(
   "(prefers-reduced-motion: no-preference)"
 );
 
+
 if (motionOK) {
+console.log("motionOK is True");
+
   const splitTargets = document.querySelectorAll("[split-by]");
 
   splitTargets.forEach((node) => {
@@ -33,6 +40,8 @@ if (motionOK) {
 }
 
 function onInput() {
+  console.log("input Rx onInput()");
+
   const value = slider.value;
   root.style.setProperty("--speed", `${value}ms`);
 }
@@ -40,6 +49,8 @@ function onInput() {
 slider.addEventListener("input", debounce(onInput, 10));
 
 function debounce(func, wait) {
+  console.log("inside debounce func");
+
   let timeoutId;
   return function () {
     const context = this;
